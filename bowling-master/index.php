@@ -34,9 +34,11 @@
   
   <h2>Login</h2>
     <form action="login.php" method="post">
-      email&nbsp;<input type="text" name="email" /><br>
-      pass&nbsp;<input type="text" name="pass" /><br>
-      <input type="submit" value="login"/>
+      <table>
+		<tr><td>email</td><td><input type="text" name="email" /></td></tr>
+		<tr><td>password</td><td><input type="password" name="pass" /></td></tr>
+		 <tr><td></td><td><input type="submit" value="login"/></td></tr>
+	</table>
     </form>
 
 

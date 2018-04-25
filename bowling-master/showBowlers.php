@@ -15,7 +15,42 @@
   <?php
      echo '<p><a href="logout.php">Logout</a>' . " " . $_SESSION['firstName'] . '</p>';
   ?>
-  <h1>Show Bowlers Stub</h1>
-  <p>Stubs are just placeholders. No need to show the bowlers yet.</p>
+  <h1>Show Bowlers</h1>
+
+<?php
+include('config.php');
+
+	$connect = mysqli_connect(SERVER, USER, PW, DB);
+	
+	if(!$connect)
+	{
+		exit("Error could not connect to database");
+	}
+	
+	$query = "SELECT first_name, last_name from bowlers ORDER BY last_name ASC";
+	$result = mysqli_query($connect, $query);
+	
+	if(!$result)
+	{
+		exit("<p>Could not successfully run the query, $query</p>");
+	}
+	
+	if (mysqli_num_rows($result) == 0)
+	{
+		echo "<p>No records returned</p>";
+	}
+	else
+	{
+		echo "<h1>Bowlers</h1>";
+		while($row = mysqli_fetch_assoc($result))
+		{
+			echo "<p>{$row['first_name']} {$row['last_name']}</p>";
+		}
+	}
+	
+	// echo "<p>Connected to database</p>";
+	
+	mysqli_close($connect);
+	?>
 </body>
 </html>

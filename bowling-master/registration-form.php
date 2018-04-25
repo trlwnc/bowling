@@ -11,13 +11,13 @@
 <body>
     <h1>Bowler Registration</h1>
     <form action="registration.php" method="post">
-        <p>First<input type="text" name="firstName" required></p>
-        <p>Last<input type="text" name="lastName" required></p>
-        <p>Email<input type="email" name="email" required></p>
-        <p>Password<input type="password" name="pass1" required></p>
-        <p>Password<input type="password" name="pass2" required></p>
-        <p><input type="submit" value="Register"> </p>
-
+        <table>
+			<tr><td>first name</td><td><input type="text" name="first_name" /></td></tr>
+			<tr><td>last name</td><td><input type="text" name="last_name" /></td></tr>
+			<tr><td>email</td><td><input type="text" name="email" /></td></tr>
+			<tr><td>password</td><td><input type="password" name="password" /></td></tr>
+			<tr><td></td><td><input type="submit" value="login"/></td></tr>
+		</table>
     </form>
 </body>
 </html>
